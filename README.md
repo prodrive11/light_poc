@@ -1,11 +1,11 @@
 
 # Summary
 
-[System execution](README.md)
+[System execution](README.md)  
 
-[Task 1](docs/t1.md)
-[Task 2](docs/t2.md)
-[Task 3](docs/UI.md)
+[(todo) Task 1](docs/t1.md)  
+[(todo) Task 2](docs/t2.md)  
+[(todo) Task 3](docs/UI.md)  
 
 
 # Running the system
@@ -29,11 +29,11 @@ Here is the syntax to keep the brief document complete.
 # to print help
   allinone -h
 
-# to run test _(test file needs to exist)_
-  allinone --test test.task1.q 
+# to run test _(test file needs to exist in ./test folder)_
+  allinone -t t1.q 
 
-# to run test _(test file needs to exist)_
-  allinone --run task1.q 
+# to run test _(application file needs to exist in ./src folder)_
+  allinone -r t1.q 
 
 
 ```
