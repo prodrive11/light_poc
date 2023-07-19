@@ -1,6 +1,7 @@
-.api.get.vwap:{[st;et]
-  select size wavg price by sym from quote where time within (st;et)  
- }
+system "l src/utils.q"
+system "l src/api.t1.q"
 
-.core.vwap:{[p;s]  sum[p*s]%sum[s] }
+`trade set loadcsv[`];
 
+-1 "trade data loaded";
+-1 "example: \n\t .api.get.vwap[`HMG`LDM; 2023.07.19D00:00:00.; 2023.07.19D01:00:00.]";
