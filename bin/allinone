@@ -9,10 +9,10 @@ help(){
 
   Options:
     
-     -r|--run	[target]	executes command for given task
-     -t|--test	[target]	runs tests for givcen task
-     -d|--daemon		runst applicatin/test as daemon (default it's interractive)
-     -h|--help			prints this help message 
+     -r    [target]	executes command for given task
+     -t    [target]	runs tests for givcen task
+     -d    runst applicatin/test as daemon (default it's interractive)
+     -h    prints this help message 
 
 EOHELP
  exit 0;
@@ -37,7 +37,7 @@ run(){
 export INTERACTIVE=true
 
 ######  main
-OPTS=$(getopt 'f:hd' -- $*) || help
+OPTS=$(getopt 'f:r:hd' -- $*) || help
 set -- $OPTS
 shift
 

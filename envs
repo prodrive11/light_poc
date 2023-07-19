@@ -1,2 +1,4 @@
 APP_ROOT="$PWD"
 PATH="$PATH:$APP_ROOT/bin"
+
+export APP_ROOT PATH
