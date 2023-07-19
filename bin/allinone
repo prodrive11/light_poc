@@ -44,8 +44,8 @@ shift
 while true ; do
   case $1 in
      -d) export INTERACTIVE=false ;;
-     -t) run src/loader.q -test "test/$2" ;  shift; break ;;
-     -r) run src/loader.q -exec "src/$2"; shift ;break ;;
+     -t) run core/loader.q -test "test/$2" ;  shift; break ;;
+     -r) run core/loader.q -exec "src/$2"; shift ;break ;;
      -h) help ; shift; break ;;
      (--) shift; break;;
      (*) help ;;

@@ -1,4 +1,4 @@
-system "l src/api.t1.q";
+system "l src/T1/t1.api.q";
 
 
 .t.T 1b;

@@ -32,8 +32,8 @@ Here is the syntax to keep the brief document complete.
 # to run test _(test file needs to exist in ./test folder)_
   allinone -t t1.q 
 
-# to run test _(application file needs to exist in ./src folder)_
-  allinone -r t1.q 
+# to run application _(application file needs to exist in ./src folder)_
+  allinone -r T1/t1.app.q 
 
 
 ```
