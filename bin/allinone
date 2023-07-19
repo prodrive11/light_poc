@@ -1,0 +1,58 @@
+#!/bin/bash
+
+help(){
+  cat <<EOHELP
+
+  $(basename "$0") ver 0.1
+  
+  Usage: $(basename "$0")  [OPTION] <FILE>
+
+  Options:
+    
+     -r|--run	[target]	executes command for given task
+     -t|--test	[target]	runs tests for givcen task
+     -d|--daemon		runst applicatin/test as daemon (default it's interractive)
+     -h|--help			prints this help message 
+
+EOHELP
+ exit 0;
+ }
+
+run(){
+  local _action_script _cparam _src_script
+  _action_script="$1";  _cparam="$2"; _src_script="$3"
+  if [[ ! -f $_src_script ]]; then echo "no such file or directory: $_src_script"; exit 1 ; fi
+  CMD="q $_action_script $_cparam $_src_script"
+  if [[ ! $INTERACTIVE == true ]]; then  
+     LOGFILE="$APP_ROOT/logs/$(date +'%Y%d%m%s').log"
+     mkdir -p $LOGFILE
+     CMD="nohup $CMD </dev/null &> $LOGFILE"
+  fi
+  exec $CMD
+}
+
+
+
+######  global environment variables
+export INTERACTIVE=true
+
+######  main
+OPTS=$(getopt 'f:hd' -- $*) || help
+set -- $OPTS
+shift
+
+while true ; do
+  case $1 in
+     -d) export INTERACTIVE=false ;;
+     -t) run src/loader.q -test "test/$2" ;  shift; break ;;
+     -r) run src/loader.q -exec "src/$2"; shift ;break ;;
+     -h) help ; shift; break ;;
+     (--) shift; break;;
+     (*) help ;;
+  esac
+  shift
+done
+
+exit 0
+
+

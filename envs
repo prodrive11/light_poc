@@ -1,0 +1,2 @@
+APP_ROOT="$PWD"
+PATH="$PATH:$APP_ROOT/bin"
