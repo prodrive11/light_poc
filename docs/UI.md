@@ -2,4 +2,4 @@
 # Scalable Data Fabric Architecture
 
 
-![architecture_diagram](./docs/sketch1689848084285.png)
+![architecture_diagram](./sketch1689848084285.png)
