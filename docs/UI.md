@@ -24,7 +24,7 @@ Belowe brief architecture outline.
    ```
       D:24*60*60 //seconds in a day
       min30:30*60 //30 mins requested in seconds
-      stepRouter: (`s# (`s#-2 0 0.2 0.6 1)!`::dailyOHLC`::min30Snaps`::m5Snaps`::m1snaps`::tick) 
+      stepRouter: (`s# (`s#-2000 -50 0 0.2 0.6 0.9)!`::monthlyOHLC`::dailyOHLC`::min30Snaps`::m5Snaps`::m1snaps`::tick) 
 
       //which data source to query for start - end within ~ 30min ?
       H: stepRouter (D-min30)%D  // ... `::m1snaps
