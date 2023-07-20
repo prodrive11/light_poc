@@ -1,6 +1,6 @@
 
 .api.get.order_vwap:{[oids; markettrade]
-  suborders: 0!select by id from orders where id in oids;
+  suborders: 0!select by id from clientorders where id in oids;
   f:`sym`time;
   w: exec (start,'end) from suborders;
   res:wj1[w;f;suborders;(markettrade;(::;`price);(::;`volume))];
