@@ -3,9 +3,9 @@
 
 [System execution](README.md)  
 
-[(todo) Task 1](docs/t1.md)  
-[(todo) Task 2](docs/t2.md)  
-[(todo) Task 3](docs/UI.md)  
+[Task 1](docs/t1.md)  
+[Task 2](docs/t2.md)  
+[Task 3](docs/UI.md)  
 
 
 # Running the system
